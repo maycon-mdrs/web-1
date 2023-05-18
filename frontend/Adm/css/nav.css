@@ -1,0 +1,37 @@
+/* Estilo para a lista */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #0482FB;
+  }
+
+  /* Estilo para os itens da lista */
+  li {
+    float: right;
+  }
+  /* Estilo para o item à esquerda */
+  span.left-item {
+    float: left; /* Desabilita o float para o item à esquerda */
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  /* Estilo para os links */
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  /* Estilo para o link ativo */
+  li a:hover {
+    background-color: #005baf;
+  }
+

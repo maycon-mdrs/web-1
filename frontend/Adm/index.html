@@ -4,57 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/nav.css">
+    
     <title>DIGITAL MENU</title>
 </head>
 <body>
-    <main style="display: flex;">
-        <div>
-            <button>ADICIONAR LINK</button>
-        </div>
+
+    <main>
+
+        <section>
         
-        <div id="preview-container">
-            <iframe id="preview-iframe"></iframe>
-        </div>
+            <nav>
+                <ul>
+                    <span class="left-item">Logo</span>
+                    <li><a class="logout" href="#">Logout</a></li>
+                    <li><a href="#">Empresa</a></li>
+                </ul>
+            </nav>
+            
+
+        </section>
+        <div class="container">
+            <div class="nav"></div>
+            <div class="config"></div>
+            <div class="preview">
+                <div id="preview-container">
+                    <iframe id="preview-iframe"></iframe>
+                </div>
+            </div>
+          </div>
     </main>
-
-    <script>
-        // Obtém referência ao elemento iframe
-const iframe = document.getElementById("preview-iframe");
-
-// Define a URL do site que você deseja pré-visualizar
-const targetURL = "../index.html";
-
-// Define o tamanho do iframe
-const iframeWidth = 370;
-const iframeHeight = 1;
-iframe.style.transform = `scale(${.6})`;
-iframe.style.transformOrigin = "top left";
-
-// Define o atributo src do iframe como a URL do site alvo
-iframe.src = targetURL;
-
-// Aguarda o carregamento do conteúdo do iframe antes de ajustar o tamanho
-iframe.addEventListener("load", adjustIframeSize);
-
-// Função para ajustar o tamanho do iframe com base no conteúdo
-function adjustIframeSize() {
-  const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
-  const iframeBody = iframeDocument.body;
-  
-  // Define temporariamente a altura do iframe para 1px para medir o conteúdo
-  iframe.style.height = "1px";
-  
-  // Obtém a altura do conteúdo da página dentro do iframe
-  const contentHeight = iframeBody.scrollHeight;
-  
-  // Ajusta o tamanho do iframe para acomodar o conteúdo da página
-  iframe.style.height = `${Math.max(contentHeight, iframeHeight)}px`;
-  
-  // Define a largura do iframe para evitar a rolagem horizontal
-  iframe.style.width = `${iframeWidth}px`;
-}
-
-
+   
+    <script src="main.js"></script>
     </script>
 </body>
 </html>

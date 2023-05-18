@@ -3,14 +3,14 @@
 var logo = [
     {
         title: "logo",
-        url: "/images/logo-b.png"
+        url: "./images/logo-b.png"
     }
 ]
 var dados = [
     {
         title: "Cardápio",
         icon: "material-symbols:restaurant-menu",
-        link: "/cardapio/",
+        link: "./cardapio/",
         target: "_self"
     },
     {
@@ -24,7 +24,7 @@ var dados = [
         icon: "simple-icons:ifood",
         link: "https://www.ifood.com.br/delivery/natal-rn/dogspeto-natal-ponta-negra/d99a6351-271c-4e3c-a9a3-4bed2ccdc5c7?utm_medium=share",
         target: "_blank"
-    }
+    },
 ];
 
 var localizacao = [

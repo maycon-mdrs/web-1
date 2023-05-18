@@ -1,5 +1,42 @@
 /* Estilo para a lista */
-ul {
+header {
+  height: 70px;
+}
+.menu-superior {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0482FB;
+  padding: 10px;
+}
+
+.logo {
+  font-weight: bold;
+}
+
+.usuario-logout {
+  display: flex;
+  align-items: center;
+}
+
+.logout {
+  margin-left: 10px;
+  height: max-content;
+  padding: 5px 10px;
+  background-color: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.logout:hover {
+  background-color: red;
+  color: white;
+  border-radius: 5px;
+}
+
+
+/* ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -33,5 +70,5 @@ ul {
   /* Estilo para o link ativo */
   li a:hover {
     background-color: #005baf;
-  }
+  } */
 

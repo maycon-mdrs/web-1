@@ -6,37 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/nav.css">
+    <link rel="stylesheet" href="./css/header.css">
     
     <title>DIGITAL MENU</title>
 </head>
 <body>
+    <header class="menu-superior">
+        <div class="logo">Logo</div>
+        <nav class="usuario-logout">
+            <span class="usuario">Usuário</span>
+            <a href="#" class="logout">Logout</a>
+        </nav>
+    </header>
 
-    <main>
-
-        <section>
-        
-            <nav>
+    <main class="layout">
+        <aside class="sidebar">
+            <section>
+                <div></div>
                 <ul>
-                    <span class="left-item">Logo</span>
-                    <li><a class="logout" href="#">Logout</a></li>
-                    <li><a href="#">Empresa</a></li>
+                    <li>teste</li>
                 </ul>
-            </nav>
-            
+            </section>
+    
+            <section>
+                <div></div>
+                <ul>
+                    <li>teste</li>
+                </ul>
+            </section>
+        </aside>
 
+        <section class="body">
+            
         </section>
-        <div class="container">
-            <div class="nav"></div>
-            <div class="config"></div>
-            <div class="preview">
-                <div id="preview-container">
-                    <iframe id="preview-iframe"></iframe>
-                </div>
-            </div>
-          </div>
+
+        <section class="body2">
+            <iframe id="preview-iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" allowfullscreen="true"></iframe>
+        </section>
     </main>
-   
+
     <script src="main.js"></script>
     </script>
 </body>

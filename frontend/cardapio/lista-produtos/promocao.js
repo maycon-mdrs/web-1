@@ -4,7 +4,7 @@ export const promo = [
      {
          categoria: "🔥 DOGSPETO",
          id: "promo",
-         imgProduct: "/cardapio/produtos/dogspeto.jpg",
+         imgProduct: "./produtos/dogspeto.jpg",
          title: "🔥 DOGSPETO",
          description: "Pão parmesão, carne moída, molho barbecue, espeto de carne, vinagrete, milho, ervillha e queijo mussarela maçaricado.",
          valor: "R$16,00"

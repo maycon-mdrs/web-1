@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Extended+Text&display=swap');
+
+*{
+    font-family: 'Roboto', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    padding: 10px;
+    background: #0482FB;
+    z-index: 999;
+}
+
+header .logo {
+    font-family: 'Libre Barcode 39 Extended Text', cursive;
+    font-size: 40px;
+    color: white;
+}
+
+header .config .empresa {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    color: white;
+}
+
+header .config .empresa .img-empresa {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 5px;
+    border: 1px solid rgb(114, 114, 114);
+    background-color: #B0B0B0;
+}
+
+header .config {
+    display: flex;
+    align-items: center;
+}
+
+header .config .logout {
+    display: flex;
+    align-items: center;
+    color: white;
+    padding: 5px;
+    width: 80px;
+    border-radius: 5px;
+    background-color: #0058aa;
+    justify-content: center;
+}
+
+header .config .logout:hover {
+    background-color: red;
+}
+
+header .config a .icon {
+    margin-right: 5px;
+    align-items: center;
+}
+
+.side-bar {
+    background: #17232D;
+    width: 240px;
+    height: 100vh;
+    top: 70px;
+    left: -100%;
+    position: fixed;
+    transition: 0.2s ease-in-out;
+    transition-property: left;
+    z-index: 999;
+}
+
+.side-bar.active {
+    left: 0;
+}
+
+.side-bar .menu {
+    width: 100%;
+    margin-top: 40px;
+}
+
+.side-bar .menu .item {
+    position: relative;
+}
+
+.side-bar .menu .item span {
+    display: block;
+    color: #B0B0B0;
+    font-size: 16px;
+    padding: 5px 30px;
+    line-height: 40px;
+}
+
+.side-bar .menu .item a {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+    margin: 5px 30px;
+    border-radius: 5px;
+    line-height: 40px;
+}
+
+.side-bar .menu .item a:hover {
+    background: #0482FB;
+    transition: 0.3s ease;
+}
+
+.side-bar .menu .item .icon {
+    margin-right: 10px;
+    align-items: center;
+}
+
+.side-bar .menu .item .sub-menu a {
+    padding-left: 20px;
+}
+
+.menu-btn {
+    position: fixed;
+    margin: 10px;
+    top: 70px;
+    cursor: pointer;
+    background: #0482FB;
+    border-radius: 50%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-btn:hover {
+    background: #0058aa;
+}
+
+.menu-btn:hover .icon-menu {
+    transition: 0.3s ease;
+    transform: scale(1.1);
+}
+
+.close-btn {
+    position: absolute;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 0;
+    padding: 10px;
+}
+
+/* .container {  
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas: ". .";
+    min-height: 100vh;
+} */
+
+.col-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: inherit;
+    border-left: 1px solid #B0B0B0;
+}

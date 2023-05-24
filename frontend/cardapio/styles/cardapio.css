@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Signatra';
-    src: url('/fonts/Signatra.otf') format('opentype'), url('/fonts/Signatra.ttf') format('truetype');
+    src: url('../fonts/Signatra.otf') format('opentype'), url('../fonts/Signatra.ttf') format('truetype');
     font-weight: normal;
 }
 * {

@@ -4,7 +4,7 @@ export const extras = [
      {
          categoria: "EXTRAS",
          id: "extras",
-         imgProduct: "/cardapio/produtos/batata-f.PNG",
+         imgProduct: "./produtos/batata-f.PNG",
          title: "BATATA FRITA",
          description: "Batata Frita - 300g.",
          valor: "R$12,00"
@@ -13,7 +13,7 @@ export const extras = [
      {
         categoria: "EXTRAS",
         id: "extras",
-        imgProduct: "/cardapio/produtos/batata-c.jpg",
+        imgProduct: "./produtos/batata-c.jpg",
         title: "BATATA FRITA, CHEDDAR E BACON",
         description: "Batata Frita com Cheddar e Bacon - 300g.",
         valor: "R$16,00"
@@ -22,7 +22,7 @@ export const extras = [
     {
         categoria: "EXTRAS",
         id: "extras",
-        imgProduct: "/cardapio/produtos/vinagrete.PNG",
+        imgProduct: "./produtos/vinagrete.PNG",
         title: "VINAGRETE",
         description: "Porção extra de Vinagrete.",
         valor: "R$3,00"
@@ -31,7 +31,7 @@ export const extras = [
     {
         categoria: "EXTRAS",
         id: "extras",
-        imgProduct: "/cardapio/produtos/farofa.png",
+        imgProduct: "./produtos/farofa.png",
         title: "FAROFA",
         description: "Porção extra de Farofa.",
         valor: "R$4,00"

@@ -7,7 +7,10 @@
     outline: none; border:none;
     text-decoration: none;
 }
-
+body {
+    background: #f3f3f1;
+    height: 1500px;
+}
 header {
     display: flex;
     justify-content: space-between;
@@ -168,28 +171,53 @@ header .config a .icon {
     min-height: 100vh;
 } */
 
-.container { 
-    display: flex;
-    /* justify-content: space-between;*/
-    position: relative; 
-    padding-top: 70px;
+.div-4-col-2 {
+    height: 100%;
+}
+
+.div-3-col-2 {
+    transform: scale(0.536932) translateX(-50%) translateY(-50%) translate3d(0px, 0px, 0px);
+    width: 352px;
+    height: 724px;
+    padding: 16px;
+    display: block;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: top left;
+
+}
+
+.div-2-col-2 {
+    transition: all .5s cubic-bezier(.08,.59,.29,.99) .2s;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translate(-50%);
+    opacity: 1;
+}
+
+.div-1-col-2 {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: inherit;
     height: 100vh;
 }
 
-.col-1 {
-    /* margin-top: 70px;
-    margin-left: 100px;    */ 
-    flex: 1;
-    overflow-y: auto;
-    max-width: 600px;
+.col-2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    min-height: 100vh;
+    width: 300px;
+    border-left: 1px solid #e0e2d9;
 }
 
-.col-2 {
-    flex-shrink: 0;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 50px 0 50px;
-    border-left: 1px solid #B0B0B0;
-} 
+.col-1 {
+    margin: 0 auto;
+}

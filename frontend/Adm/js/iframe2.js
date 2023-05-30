@@ -9,7 +9,6 @@ const targetURL = "../index.html";
 const iframeHeight = 400;
 iframe.style.width = `370px`;
 iframe.style.borderRadius = `40px 0 0 40px`;
-iframe.style.transform = `scale(${0.6})`;
 
 // Define o atributo src do iframe como a URL do site alvo
 iframe.src = targetURL;
@@ -20,7 +19,7 @@ function adjustIframeHeight() {
   const contentHeight = iframeDocument.documentElement.scrollHeight;
   //iframe.style.height = `${Math.max(contentHeight, iframeHeight)}px`;
 
-  iframe.style.height = "600px";  
+  iframe.style.height = "100%";  
 
   //iframeDocument.body.style.transform = `scale(${.6})`;
   //iframeDocument.body.style.transformOrigin = "center top";

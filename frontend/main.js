@@ -8,7 +8,7 @@ var logo = [
 ]
 var dados = [
     {
-        title: "Cardápio",
+        title: "Cardápiooooooooooo",
         icon: "material-symbols:restaurant-menu",
         link: "./cardapio/",
         target: "_self"
@@ -22,6 +22,12 @@ var dados = [
     {
         title: "Ifood",
         icon: "simple-icons:ifood",
+        link: "https://www.ifood.com.br/delivery/natal-rn/dogspeto-natal-ponta-negra/d99a6351-271c-4e3c-a9a3-4bed2ccdc5c7?utm_medium=share",
+        target: "_blank"
+    },
+    {
+        title: "Ifooooooooooooooooooooood",
+        icon: "",
         link: "https://www.ifood.com.br/delivery/natal-rn/dogspeto-natal-ponta-negra/d99a6351-271c-4e3c-a9a3-4bed2ccdc5c7?utm_medium=share",
         target: "_blank"
     },
@@ -85,8 +91,16 @@ function criarElementos() {
         section.appendChild(div);
         div.appendChild(a);
         a.appendChild(button);
-        button.appendChild(icon);
+        if(item.icon != ""){ 
+            button.appendChild(icon);
+        }
         button.appendChild(span); 
+
+        // ajustar botão
+        console.log('teste' + span.offsetWidth)
+        if(span.offsetWidth > 115 && item.icon != "") {
+            span.style.marginLeft = "30px";
+        }
     });
 }
 

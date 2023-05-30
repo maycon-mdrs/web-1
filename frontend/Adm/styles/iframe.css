@@ -1,3 +1,20 @@
 iframe {
     position: relative;
+    width: auto;
+    height: 450px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transform: scale(0.543854) translateX(-50%) translateY(-50%);
+}
+
+/* STYLE SCROLLBAR */
+::-webkit-scrollbar {
+    background-color: rgb(211, 211, 211);
+    height: 10px;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid rgb(201, 201, 201);
 }

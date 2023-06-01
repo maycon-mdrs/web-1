@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="./style/logo.css">
+
+    <title>Perfil</title>
+</head>
+<body>
+    <div class="add-link-btn">
+        <span>+ Add Link</span>
+    </div>
+    <form>
+        <div class="row">
+            <div class="col">
+                <label for="cor-btn" class="form-label">Cor Links</label>
+                <div class="color-container">
+                    <div class="cor-btn-div">
+                        <input class="form-control" type="color" id="cor-btn" name="cor-btn" value="#ff0000">
+                    </div>
+                    <input type="text" id="hexValue-1" class="form-control">
+                </div>            
+            </div>
+
+            <div class="col">
+                <label for="cor-txt-btn" class="form-label">Cor Texto</label>
+                <div class="color-container">
+                    <input class="form-control" type="color" id="cor-txt-btn" name="cor-txt-btn" value="#ff0000">
+                    <input type="text" id="hexValue-2" class="form-control">
+                </div>  
+            </div>
+        </div>
+
+        <script>
+            const colorPicker1 = document.getElementById('cor-txt-btn');
+            const colorPicker2 = document.getElementById('cor-btn');
+            const hexValue1 = document.getElementById('hexValue-1');
+            const hexValue2 = document.getElementById('hexValue-2');
+        
+            const selectedColor1 = colorPicker1.value;
+            hexValue1.value = selectedColor1;
+
+            const selectedColor2 = colorPicker2.value;
+            hexValue2.value = selectedColor2;
+
+            colorPicker.addEventListener('input', function() {
+                selectedColor1 = colorPicker1.value;
+                hexValue1.value = selectedColor1;
+                
+                selectedColor2 = colorPicker2.value;
+                hexValue2.value = selectedColor2;
+            });
+        </script>    
+
+        <!-- <div class="mb-3">
+            <label for="disabledSelect" class="form-label">Cor dos Botões</label>
+            <select id="disabledSelect" class="form-select">
+              <option>Disabled select</option>
+            </select>
+        </div>
+
+        <div class="input-cor-link">
+            <label for="cor-btn">Selecionar Cor Botão</label>
+            <input type="color" id="cor-btn" name="cor-btn" value="#ff0000">
+        </div>
+
+        <div class="input-cor-txt">
+            <label for="cor-txt">Selecionar Cor Texto</label>
+            <input type="color" id="cor-txt" name="cor-txt" value="#ff0000">
+        </div> -->
+        
+    </form>
+</body>
+</html>

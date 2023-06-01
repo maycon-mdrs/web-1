@@ -21,25 +21,23 @@
             <div class="col">
                 <label for="cor-btn" class="form-label">Cor Links</label>
                 <div class="color-container">
-                    <div class="cor-btn-div">
-                        <input class="form-control" type="color" id="cor-btn" name="cor-btn" value="#ff0000">
-                    </div>
-                    <input type="text" id="hexValue-1" class="form-control">
+                    <input type="color" id="cor-btn" name="cor-btn" value="#00ffd5">
+                    <input type="text" id="hexValue-1" style="cursor: pointer;" readonly>
                 </div>            
             </div>
 
             <div class="col">
                 <label for="cor-txt-btn" class="form-label">Cor Texto</label>
                 <div class="color-container">
-                    <input class="form-control" type="color" id="cor-txt-btn" name="cor-txt-btn" value="#ff0000">
-                    <input type="text" id="hexValue-2" class="form-control">
+                    <input type="color" id="cor-txt-btn" name="cor-txt-btn" value="#00ffd5">
+                    <input type="text" id="hexValue-2" style="cursor: pointer;" readonly>
                 </div>  
             </div>
         </div>
 
         <script>
-            const colorPicker1 = document.getElementById('cor-txt-btn');
-            const colorPicker2 = document.getElementById('cor-btn');
+            const colorPicker1 = document.getElementById('cor-btn');
+            const colorPicker2 = document.getElementById('cor-txt-btn');
             const hexValue1 = document.getElementById('hexValue-1');
             const hexValue2 = document.getElementById('hexValue-2');
         
@@ -49,13 +47,25 @@
             const selectedColor2 = colorPicker2.value;
             hexValue2.value = selectedColor2;
 
-            colorPicker.addEventListener('input', function() {
-                selectedColor1 = colorPicker1.value;
+            colorPicker1.addEventListener('input', () => {
+                const selectedColor1 = colorPicker1.value;
                 hexValue1.value = selectedColor1;
-                
-                selectedColor2 = colorPicker2.value;
+            });
+           
+            hexValue1.addEventListener('click', () => {
+                colorPicker1.click();
+            });
+
+            colorPicker2.addEventListener('input', function() {
+                const selectedColor2 = colorPicker2.value;
                 hexValue2.value = selectedColor2;
             });
+
+            hexValue2.addEventListener('click', () => {
+                colorPicker2.click();
+            });
+
+        
         </script>    
 
         <!-- <div class="mb-3">

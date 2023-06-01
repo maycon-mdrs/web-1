@@ -32,21 +32,44 @@
     align-items: center;
 }
 
-.cor-btn-div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 26px;
-    border-radius: 20px 0 0 20px;
-    overflow: hidden;
-}
-#cor-btn {
-    border: 0;
-    height: 50px;
-    width: 70px;
+/* https://www.youtube.com/watch?v=9Ds6dzhda0c */
+#cor-btn, #cor-txt-btn {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 60px;
+    height: 60px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
 }
 
+#cor-btn::-webkit-color-swatch {
+    border-radius: 15px 0 0 15px;
+    border: 1px solid grey;
+}
+#cor-btn::-moz-color-swatch {
+    border-radius: 15px 0 0 15px;
+    border: 1px solid grey;
+}
+
+#cor-txt-btn::-webkit-color-swatch {
+    border-radius: 15px 0 0 15px;
+    border: 1px solid grey;
+}
+#cor-txt-btn::-moz-color-swatch {
+    border-radius: 15px 0 0 15px;
+    border: 1px solid grey;
+}
+
+#hexValue-1, #hexValue-2 {
+    text-align: center;
+    border-radius: 0 15px 15px 0;
+    border: 1px solid grey;
+    border-left: none;
+    height: 60px;
+    width: 100px;
+}
 
 /* form {
     display: flex;

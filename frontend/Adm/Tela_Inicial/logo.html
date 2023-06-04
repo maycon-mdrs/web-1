@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,136 +8,69 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
-
+    <link rel="stylesheet" href="./style/links.css">
     <link rel="stylesheet" href="./style/logo.css">
 
     <title>Perfil</title>
 </head>
 <body>
 
-    <form>
-        <div class="row">
-            <div class="col-12">
-                <div class="add-link-btn">
-                    <span>+ Add Link</span>
-                </div>          
-            </div>
-        </div>
-
-        <div class="row">
-          <div class="col-6">
-                <label for="cor-btn" class="form-label">Cor Links</label>
-                <div class="color-container">
-                    <input type="color" id="cor-btn" name="cor-btn" value="#00ffd5">
-                    <input type="text" id="hexValue-1" style="cursor: pointer;" readonly>
-                </div>  
-          </div>
-
-          <div class="col-6">
-                <label for="cor-txt-btn" class="form-label">Cor Texto</label>
-                <div class="color-container">
-                    <input type="color" id="cor-txt-btn" name="cor-txt-btn" value="#00ffd5">
-                    <input type="text" id="hexValue-2" style="cursor: pointer;" readonly>
-                </div> 
-          </div>
-        </div>
-    </form>
-
-    <form class="row g-3 needs-validation" novalidate>
-
-        <div class="col-6">
-            <label for="validationCustom02" class="form-label">Título</label>
-            <input type="text" class="form-control" id="validationCustom02" required>
-            <div class="invalid-feedback">
-                Insira um título.
-            </div>
-        </div>
-       
-        <div class="col-6">
-            <label for="validationCustom04" class="form-label">Icone</label>
-            <select class="form-select" id="validationCustom04" required>
-                <option selected disabled value="">Selecionar Icone</option>
-                <option value="1">Cardápio</option>
-                <option value="2">Instagram</option>
-                <option value="3">Ifood</option>
-                <option value="4">Nenhum</option>
-            </select>
-            <div class="invalid-feedback">
-                Selecione um estado válido.
-            </div>
-        </div>
-
-        <div class="col-12">
-            <label for="validationCustom03" class="form-label">URL</label>
-            <div class="input-group">
-                <span class="input-group-text" id="basic-addon1">https://</span>
-                <input type="text" class="form-control" id="validationCustom03" placeholder="www.name.com" required>
-                <div class="invalid-feedback">
-                    Insira um endereço.
+    <div class="card mb-3" style="max-width: 540px;">
+        <form>
+            <div class="row g-0">
+                <div class="col-sm">
+                    <div class="card-title d-flex justify-content-center">
+                        <div class="round-image" id="uploaded-image"></div>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="card-body">
+                        <div class="row">
+                            <input type="file" class="btn btn-primary add-link-btn" id="upload-input">
+                        </div>
+                        <div class="row mt-3">
+                            <button type="button" class="btn btn-light" style="border-radius: 20px; height: 50px;">Remover</button>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        
-        <div class="col-12">
-            <button class="btn btn-primary" type="submit">Salvar</button>
-        </div>
-        
-      </form>
+            <div class="row g-0">
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Nome</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Empresa Lorem">
+                    </div>    
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Descrição</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
 
+                
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <label for="cor-btn" class="form-label">Cor Background</label>
+                            <div class="color-container">
+                                <input type="color" id="cor-btn" name="cor-btn" value="#CCCCCC">
+                                <input type="text" id="hexValue-1" style="cursor: pointer;" readonly>
+                            </div>  
+                        </div>
 
-    <script>
-        const colorPicker1 = document.getElementById('cor-btn');
-        const colorPicker2 = document.getElementById('cor-txt-btn');
-        const hexValue1 = document.getElementById('hexValue-1');
-        const hexValue2 = document.getElementById('hexValue-2');
+                        <div class="col-12">
+                        <button class="btn btn-primary add-link-btn" type="submit">
+                            <span>Salvar</span>
+                        </button>  
+                    </div>
+
+                    </div>
+                    
+
+                </div>
+            </div>
+        </form>
+    </div>    
+
+    <script src="./js/logo.js"></script>
     
-        const selectedColor1 = colorPicker1.value;
-        hexValue1.value = selectedColor1.toUpperCase();
-
-        const selectedColor2 = colorPicker2.value;
-        hexValue2.value = selectedColor2.toUpperCase();
-
-        colorPicker1.addEventListener('input', () => {
-            const selectedColor1 = colorPicker1.value;
-            hexValue1.value = selectedColor1.toUpperCase();
-        });
-       
-        hexValue1.addEventListener('click', () => {
-            colorPicker1.click();
-        });
-
-        colorPicker2.addEventListener('input', () => {
-            const selectedColor2 = colorPicker2.value;
-            hexValue2.value = selectedColor2.toUpperCase();
-        });
-
-        hexValue2.addEventListener('click', () => {
-            colorPicker2.click();
-        });
-
-
-        // Example starter JavaScript for disabling form submissions if there are invalid fields
-        (() => {
-        'use strict'
-
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        const forms = document.querySelectorAll('.needs-validation')
-
-        // Loop over them and prevent submission
-        Array.from(forms).forEach(form => {
-            form.addEventListener('submit', event => {
-            if (!form.checkValidity()) {
-                event.preventDefault()
-                event.stopPropagation()
-            }
-
-            form.classList.add('was-validated')
-            }, false)
-        })
-        })()
-
-    </script>    
 </body>
 </html>

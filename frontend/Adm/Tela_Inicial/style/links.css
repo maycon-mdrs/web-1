@@ -1,0 +1,72 @@
+*{
+    font-family: 'Roboto', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    border: 0;
+    text-decoration: none;
+}
+
+.add-link-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* max-width: 540px; */
+    width: 100%;
+    min-width: fit-content;
+    height: 50px;
+    border-radius: 20px;
+     /* #00FFFF */
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.cores-div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.color-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+/* https://www.youtube.com/watch?v=9Ds6dzhda0c */
+#cor-btn, #cor-txt-btn {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#cor-btn::-webkit-color-swatch {
+    border-radius: 15px 0 0 15px;
+    border: 1px solid grey;
+}
+#cor-btn::-moz-color-swatch {
+    border-radius: 15px 0 0 15px;
+    border: 1px solid grey;
+}
+
+#cor-txt-btn::-webkit-color-swatch {
+    border-radius: 15px 0 0 15px;
+    border: 1px solid grey;
+}
+#cor-txt-btn::-moz-color-swatch {
+    border-radius: 15px 0 0 15px;
+    border: 1px solid grey;
+}
+
+#hexValue-1, #hexValue-2 {
+    text-align: center;
+    border-radius: 0 15px 15px 0;
+    border: 1px solid grey;
+    border-left: none;
+    height: 50px;
+    width: 100%;
+}

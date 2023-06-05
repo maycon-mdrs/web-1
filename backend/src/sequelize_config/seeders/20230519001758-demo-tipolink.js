@@ -8,6 +8,10 @@ module.exports = {
         {
         descricao: 'ifood',
         icone: 'icons.ifood'
+      },
+      {
+        descricao: 'instagram',
+        icone: 'icons.insta'
       }
     ], {});
     

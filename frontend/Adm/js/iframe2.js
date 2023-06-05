@@ -3,7 +3,7 @@ const iframe = document.getElementById("preview-iframe");
 const coluna2 = document.querySelector('.col-2');
 
 // Define a URL do site que você deseja pré-visualizar
-const targetURL = "../index.html";
+const targetURL = "../../index.html";
 
 // Define a altura fixa do iframe em pixels
 const iframeHeight = 400;
@@ -23,7 +23,7 @@ function adjustIframeHeight() {
 
   //iframeDocument.body.style.transform = `scale(${.6})`;
   //iframeDocument.body.style.transformOrigin = "center top";
-  iframeDocument.style.overflow = "auto";
+  //iframeDocument.style.overflow = "auto";
 }
 
 // Aguarda o carregamento do conteúdo do iframe antes de ajustar a altura

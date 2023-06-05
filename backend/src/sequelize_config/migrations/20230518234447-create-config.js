@@ -1,5 +1,7 @@
 'use strict';
 
+const { DataTypes } = require('sequelize');
+
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
@@ -10,19 +12,27 @@ module.exports = {
         allowNull: false,
         primaryKey: true
       },
+      name: {
+        type: DataTypes.STRING(45),
+        allowNull: false
+      },
+      description: {
+        type: DataTypes.STRING(250),
+        allowNull: false
+      },
       logopath: {
         type: DataTypes.STRING(45),
         allowNull: false
       },
-      primcolor: {
+      button_color: {
         type: DataTypes.STRING(45),
         allowNull: false
       },
-      secondcolor: {
+      text_color: {
         type: DataTypes.STRING(45),
         allowNull: false
       },
-      background: {
+      background_color: {
         type: DataTypes.STRING(45),
         allowNull: false
       }

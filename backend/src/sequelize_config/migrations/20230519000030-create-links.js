@@ -1,5 +1,7 @@
 'use strict';
 
+const { DataTypes } = require('sequelize');
+
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
@@ -10,11 +12,15 @@ module.exports = {
         allowNull: false,
         primaryKey: true
       },
-      url: {
+      title: {
         type: DataTypes.STRING(45),
         allowNull: false
       },
-      tipo: {
+      url: {
+        type: DataTypes.STRING(350),
+        allowNull: false
+      },
+      icon_type: {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {

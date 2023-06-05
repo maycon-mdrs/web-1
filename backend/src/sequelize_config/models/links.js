@@ -7,11 +7,15 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       primaryKey: true
     },
+    title: {
+      type: DataTypes.STRING(45),
+      allowNull: false
+    },
     url: {
       type: DataTypes.STRING(45),
       allowNull: false
     },
-    tipo: {
+    icon_type: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {

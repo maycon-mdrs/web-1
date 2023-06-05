@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "santacatarina123",
+    "password": "root",
     "database": "bd_web1",
     "host": "127.0.0.1",
     "dialect": "mysql"

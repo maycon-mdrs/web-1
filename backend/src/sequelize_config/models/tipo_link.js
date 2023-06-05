@@ -7,11 +7,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       primaryKey: true
     },
-    descricao: {
-      type: DataTypes.STRING(45),
-      allowNull: false
-    },
-    icone: {
+    icon_name: {
       type: DataTypes.STRING(45),
       allowNull: false
     }

@@ -75,3 +75,22 @@ body {
 .logout:hover {
     background-color: red;
 }
+
+
+.div-4-col-2 {
+    height: 100%;
+}
+
+.div-3-col-2 {
+    transform: scale(0.536932) translateX(-50%) translateY(-50%) translate3d(0px, 0px, 0px);
+    width: 352px;
+    height: 724px;
+    padding: 16px;
+    display: block;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: top left;
+
+}

@@ -9,6 +9,12 @@ module.exports = {
       primcolor: 'blue',
       secondcolor: 'yellow',
       background: 'brown',
+    },
+    {
+      logopath: 'hamburger.com',
+      primcolor: 'red',
+      secondcolor: 'green',
+      background: 'blue',
     }
   ], {});
   },

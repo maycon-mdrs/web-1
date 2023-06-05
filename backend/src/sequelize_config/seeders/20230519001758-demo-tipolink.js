@@ -6,13 +6,26 @@ module.exports = {
     
       await queryInterface.bulkInsert('tipo_link', [
         {
-        descricao: 'ifood',
-        icone: 'icons.ifood'
+        icon_name: 'material-symbols:restaurant-menu'
       },
       {
-        descricao: 'instagram',
-        icone: 'icons.insta'
-      }
+        icon_name: 'mdi:instagram'
+      },
+      {
+        icon_name: 'simple-icons:ifood'
+      },
+      {
+        icon_name: 'material-symbols:pin-drop-rounded'
+      },
+      {
+        icon_name: 'mdi:web'
+      },
+      {
+        icon_name: 'ic:baseline-tiktok'
+      },
+      {
+        icon_name: 'mdi:whatsapp'
+      },
     ], {});
     
   },

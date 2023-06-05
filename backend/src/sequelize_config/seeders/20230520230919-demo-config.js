@@ -5,16 +5,20 @@ module.exports = {
   async up (queryInterface, Sequelize) {
     await queryInterface.bulkInsert('config', [
       {
+      name: 'dogspeto',
+      description: 'fjlsakjdflkas',
       logopath: 'sopa.com',
-      primcolor: 'blue',
-      secondcolor: 'yellow',
-      background: 'brown',
+      button_color: 'blue',
+      text_color: 'yellow',
+      background_color: 'brown',
     },
     {
-      logopath: 'hamburger.com',
-      primcolor: 'red',
-      secondcolor: 'green',
-      background: 'blue',
+      name: 'gil',
+      description: 'fjlsakjdflkas',
+      logopath: 'sopa.com',
+      button_color: 'blue',
+      text_color: 'yellow',
+      background_color: 'brown',
     }
   ], {});
   },

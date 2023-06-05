@@ -6,14 +6,14 @@ module.exports = {
     
     await queryInterface.bulkInsert('links', [
       {
+      title: 'Restaurante',
       url: 'teste1',
-      texto: 'Instagram',
-      tipo: '1'
+      icon_type: '1'
     },
     {
+      title: 'Instagram',
       url: 'teste2',
-      texto: 'Ifood',
-      tipo: '2'
+      icon_type: '2'
     }
   ], {});
   

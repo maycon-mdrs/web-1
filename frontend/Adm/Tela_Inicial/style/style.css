@@ -13,6 +13,7 @@ body {
     background-color: #dfdfdf;
 }
 
+/* LOGO - digital Menu */
 .logo {
     font-family: 'Libre Barcode 39 Extended Text', cursive;
     font-size: 32px;
@@ -20,6 +21,7 @@ body {
     color: white;
 }
 
+/* MENU - itens NAVBAR */
 .menu .item {
     position: relative;
 }
@@ -62,13 +64,13 @@ body {
     background-color: red;
 }
 
-
+/* IFRAME */
 .div-4-col-2 {
     height: 100%;
 }
 
 .div-3-col-2 {
-    transform: scale(0.536932) translateX(-50%) translateY(-50%) translate3d(0px, 0px, 0px);
+    transform: scale(0.9) translateX(-50%) translateY(-50%) translate3d(0px, 0px, 0px);
     width: 352px;
     height: 724px;
     padding: 16px;
@@ -80,3 +82,59 @@ body {
     transform-origin: top left;
 
 }
+
+/* PREVIEW - BTN */
+.preview-btn {
+    position: fixed;
+    margin-bottom: 1rem;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+    visibility: hidden;
+}
+.preview-btn button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    gap: 5px;
+    padding: 0.75rem;
+
+    background-color: #0D6EFD;
+    color: white;
+}
+.preview-btn button:hover {
+    background-color: #0066ff;
+    transform: scale(1.1);
+}
+
+@media only screen and (max-width: 1366px) {
+    .div-3-col-2 {
+        transform: scale(0.7) translateX(-50%) translateY(-50%) translate3d(0px, 0px, 0px);
+    }
+}
+@media only screen and (max-width: 800px) {
+    #iframe-div {
+        display: none!important;
+    }
+    #section-main {
+        justify-content: center;
+    }
+    #preview-btn {
+        visibility: visible;
+    }
+}
+
+@media only screen and (max-height: 768px) {
+    .div-3-col-2 {
+        transform: scale(0.7) translateX(-50%) translateY(-50%) translate3d(0px, 0px, 0px);
+    }
+}
+@media only screen and (max-height: 600px) {
+    .div-3-col-2 {
+        transform: scale(0.5) translateX(-50%) translateY(-50%) translate3d(0px, 0px, 0px);
+    }
+}
+
+

@@ -1,5 +1,5 @@
 // Obtém referência aos elementos
-const iframe = document.getElementById("preview-iframe");
+const iframe = document.getElementById("preview-iframe-modal");
 const coluna2 = document.querySelector('.col-2');
 
 // Define a URL do site que você deseja pré-visualizar
@@ -30,3 +30,4 @@ function adjustIframeHeight() {
 iframe.addEventListener("load", adjustIframeHeight);
 
 //coluna2.style.transform = `scale(${0.6})`;
+

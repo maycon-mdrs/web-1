@@ -98,7 +98,7 @@ function criarElementos() {
 
         // ajustar botão
         console.log('teste' + span.offsetWidth)
-        if(span.offsetWidth > 115 && item.icon != "") {
+        if(span.offsetWidth > 100 && item.icon != "") {
             span.style.marginLeft = "30px";
         }
     });

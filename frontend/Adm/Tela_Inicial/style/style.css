@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Extended+Text&display=swap');
+
+*{
+    font-family: 'Roboto', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    border: 0;
+    text-decoration: none;
+}
+
+body {
+    background-color: #dfdfdf;
+}
+
+.logo {
+    font-family: 'Libre Barcode 39 Extended Text', cursive;
+    font-size: 32px;
+    padding: 0;
+    color: white;
+}
+
+.menu .item {
+    position: relative;
+}
+
+.menu .item span {
+    display: block;
+    color: #B0B0B0;
+    font-size: 16px;
+    padding: 5px 0;
+    line-height: 40px;
+}
+
+.menu .item a {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+    margin: 5px 30px;
+    border-radius: 5px;
+    line-height: 40px;
+    text-decoration: none;
+}
+
+.menu .item a:hover {
+    background: #0482FB;
+    transition: 0.3s ease;
+}
+
+.menu .item .icon {
+    margin-right: 10px;
+    align-items: center;
+}
+
+.menu .item .sub-menu a {
+    padding-left: 10px;
+}
+
+.logout:hover {
+    background-color: red;
+}
+
+
+.div-4-col-2 {
+    height: 100%;
+}
+
+.div-3-col-2 {
+    transform: scale(0.536932) translateX(-50%) translateY(-50%) translate3d(0px, 0px, 0px);
+    width: 352px;
+    height: 724px;
+    padding: 16px;
+    display: block;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: top left;
+
+}

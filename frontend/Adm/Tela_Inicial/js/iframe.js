@@ -3,7 +3,7 @@ const iframe = document.getElementById("preview-iframe");
 const coluna2 = document.querySelector('.col-2');
 
 // Define a URL do site que você deseja pré-visualizar
-const targetURL = "../../index.html";
+const targetURL = "../../../index.html";
 
 // Define a altura fixa do iframe em pixels
 const iframeHeight = 400;

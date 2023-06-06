@@ -10,8 +10,9 @@
 
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
 
-    <link rel="stylesheet" href="./style/links.css">
-    <link rel="stylesheet" href="./style/logo.css">
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/logo.css">
+    <link rel="stylesheet" href="../style/links.css">
 
     <title>Perfil</title>
 </head>
@@ -37,11 +38,11 @@
                         <div class="item">
                             <span>• TELA INICIAL</span>
                             <div class="sub-menu">
-                                <a class="sub-item" href="logo.html">
+                                <a class="sub-item" href="../perfil/">
                                     <iconify-icon class="icon" icon="mdi:storefront-edit" style="color: white;" width="18" height="18"></iconify-icon>Logo</a>
-                                <a class="sub-item" href="./Tela_Inicial/links.html"><iconify-icon class="icon" icon="mdi:link-variant" style="color: white;" width="18" height="18"></iconify-icon>Links</a>
-                                <a class="sub-item" href="./Tela_Inicial/endereco.html"><iconify-icon class="icon" icon="mdi:map-marker" style="color: white;" width="18" height="18"></iconify-icon>Endereço</a>
-                                <a class="sub-item" href="./Tela_Inicial/bg.html"><iconify-icon class="icon" icon="mdi:image-plus" style="color: white;" width="18" height="18"></iconify-icon>Plano de fundo</a>
+                                <a class="sub-item" href="../links/"><iconify-icon class="icon" icon="mdi:link-variant" style="color: white;" width="18" height="18"></iconify-icon>Links</a>
+                                <a class="sub-item" href="./endereco.html"><iconify-icon class="icon" icon="mdi:map-marker" style="color: white;" width="18" height="18"></iconify-icon>Endereço</a>
+                                <a class="sub-item" href="./bg.html"><iconify-icon class="icon" icon="mdi:image-plus" style="color: white;" width="18" height="18"></iconify-icon>Plano de fundo</a>
                             </div>
                         </div>
             
@@ -92,10 +93,10 @@
                             </div>
                             <div class="col-sm">
                                 <div class="card-body">
-                                    <div class="row">
+                                    <div class="row g-0">
                                         <input type="file" class="btn btn-primary add-link-btn" id="upload-input">
                                     </div>
-                                    <div class="row mt-3">
+                                    <div class="row g-0 mt-3">
                                         <button type="button" class="btn btn-light" style="border-radius: 20px; height: 50px;">Remover</button>
                                     </div>
                                 </div>
@@ -139,27 +140,19 @@
             </div>
 
             <div class="col-4 d-flex justify-content-center position-fixed top-0 end-0" style="border-left: 1px solid grey; height: 100vh;margin-top: 2rem;">
-             
-                    
-
-                    <div class="div-3-col-2"> 
-                        <div class="div-4-col-2">
-                        
-                            <iframe id="preview-iframe" frameborder="0" marginheight="0" height="100%" marginwidth="0" allowfullscreen="true"></iframe>
-                        </div>
-                
+                <div class="div-3-col-2"> 
+                    <div class="div-4-col-2">
+                        <iframe id="preview-iframe" frameborder="0" marginheight="0" height="100%" marginwidth="0" allowfullscreen="true"></iframe>
                     </div>
-                  
-
-             
+                </div>     
             </div>
 
         </section>
     </main>
 
 
-    <script src="./js/logo.js"></script>
-    <script src="./js/iframe.js"></script>
+    <script src="../js/logo.js"></script>
+    <script src="../js/iframe.js"></script>
 
 </body>
 </html>

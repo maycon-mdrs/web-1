@@ -70,14 +70,14 @@ body {
 }
 
 .div-3-col-2 {
-    transform: scale(0.9) translateX(-50%) translateY(-50%) translate3d(0px, 0px, 0px);
-    width: 352px;
+    transform: scale(0.9) translateX(-50%) /* translateY(-50%) translate3d(0px, 0px, 0px) */;
+    /* width: 352px; */
     height: 724px;
-    padding: 16px;
+    /* padding-top: 24px; */
     display: block;
     margin: 0 auto;
     position: absolute;
-    top: 50%;
+    top: 0;
     left: 50%;
     transform-origin: top left;
 
@@ -111,7 +111,7 @@ body {
 
 @media only screen and (max-width: 1366px) {
     .div-3-col-2 {
-        transform: scale(0.7) translateX(-50%) translateY(-50%) translate3d(0px, 0px, 0px);
+        transform: scale(0.7) translateX(-50%) /* translateY(-50%) translate3d(0px, 0px, 0px) */;
     }
 }
 @media only screen and (max-width: 800px) {
@@ -128,12 +128,12 @@ body {
 
 @media only screen and (max-height: 768px) {
     .div-3-col-2 {
-        transform: scale(0.7) translateX(-50%) translateY(-50%) translate3d(0px, 0px, 0px);
+        transform: scale(0.7) translateX(-50%) /* translateY(-50%) translate3d(0px, 0px, 0px) */;
     }
 }
 @media only screen and (max-height: 600px) {
     .div-3-col-2 {
-        transform: scale(0.5) translateX(-50%) translateY(-50%) translate3d(0px, 0px, 0px);
+        transform: scale(0.5) translateX(-50%) /* translateY(-50%) translate3d(0px, 0px, 0px) */;
     }
 }
 

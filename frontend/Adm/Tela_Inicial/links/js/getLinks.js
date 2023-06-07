@@ -19,6 +19,17 @@ window.onload = () => {
 };
 
 function loadLinks(json){
+    const listaItens = document.getElementById('items-list');
+    const tituloLinks = document.createElement('div');
+
+    tituloLinks.innerHTML = 
+    `
+        <!-- Título - add links -->
+        <div class="container" style="max-width: 540px;"><h5>Links</h5></div>
+    `;
+
+    listaItens.appendChild(tituloLinks);
+        
     json.forEach(element => {
         const listaItens = document.getElementById('items-list');
         const cardTemplate = document.createElement('div');

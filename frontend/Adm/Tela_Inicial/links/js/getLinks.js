@@ -25,7 +25,7 @@ function loadLinks(json){
     tituloLinks.innerHTML = 
     `
         <!-- Título - add links -->
-        <div class="container" style="max-width: 540px;"><h5>Links</h5></div>
+        <div class="container mt-4" style="max-width: 540px;"><h5>Links</h5></div>
     `;
 
     listaItens.appendChild(tituloLinks);
@@ -34,7 +34,7 @@ function loadLinks(json){
         const listaItens = document.getElementById('items-list');
         const cardTemplate = document.createElement('div');
         
-        cardTemplate.className = "card container mt-4";
+        cardTemplate.className = "card container mb-4";
         cardTemplate.style.maxWidth = "540px";
 
         cardTemplate.innerHTML = 

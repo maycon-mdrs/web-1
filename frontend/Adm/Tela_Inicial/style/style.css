@@ -131,7 +131,7 @@ body {
         transform: scale(0.7) translateX(-50%) /* translateY(-50%) translate3d(0px, 0px, 0px) */;
     }
 }
-@media only screen and (max-height: 600px) {
+@media only screen and (max-height: 650px) {
     .div-3-col-2 {
         transform: scale(0.5) translateX(-50%) /* translateY(-50%) translate3d(0px, 0px, 0px) */;
     }

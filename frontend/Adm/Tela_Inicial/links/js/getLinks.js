@@ -25,7 +25,7 @@ function loadLinks(json){
     tituloLinks.innerHTML = 
     `
         <!-- Título - add links -->
-        <div class="container mt-4" style="max-width: 540px;"><h5>Links</h5></div>
+        <div class="container mt-4" style="max-width: 540px;"><h4>Links</h4></div>
     `;
 
     listaItens.appendChild(tituloLinks);

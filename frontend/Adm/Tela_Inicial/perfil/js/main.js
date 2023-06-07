@@ -22,14 +22,14 @@ function verificarTamanhoPagina() {
     // Verifica se a largura da página é menor que a largura máxima
     if (larguraPagina < larguraMaxima) {
         // Muda a classe do elemento
-        colOne.className = 'col-12 d-flex justify-content-center mt-4';
+        colOne.className = 'col-12 mt-4'; //col-12 d-flex justify-content-center mt-4
         //previewBTN.style.visibility = "visible";
 
         //modalIframe.innerHTML = iframe;
         //loadIframe();
     } else {
         // Remove a classe do elemento, se necessário
-        colOne.className = 'col-8 d-flex justify-content-center mt-4';
+        colOne.className = 'col-8 mt-4'; //col-8 d-flex justify-content-center mt-4
         //previewBTN.style.visibility = "hidden";
         
         //divIframe.innerHTML = iframe;

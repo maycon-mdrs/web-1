@@ -52,8 +52,6 @@ function criarLogo() {
         img.className = l.title;
         img.src = l.url;
 
-        console.log(img)
-
         container.appendChild(header);
         header.appendChild(img);
     });
@@ -97,7 +95,6 @@ function criarElementos() {
         button.appendChild(span); 
 
         // ajustar botão
-        console.log('teste' + span.offsetWidth)
         if(span.offsetWidth > 100 && item.icon != "") {
             span.style.marginLeft = "30px";
         }

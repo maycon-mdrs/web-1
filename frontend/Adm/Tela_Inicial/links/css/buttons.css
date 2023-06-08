@@ -1,0 +1,24 @@
+* {
+    padding: 0;
+}
+.delete-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+}
+
+.delete-btn:hover {
+    color: red
+}
+
+.edit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+}
+
+.edit-btn:hover {
+    color: #0D6EFD;
+}

@@ -18,6 +18,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="../style/links.css">
+    <link rel="stylesheet" href="./css/buttons.css">
 
     <title>Adicionar Links</title>
 </head>
@@ -98,7 +99,7 @@
 
                 <!-- ADD LINKS -->
                 <div class="row g-0 mb-4">
-                <div class="card container" style="max-width: 540px; border: none;">
+                <div class="card container" style="max-width: 540px; border: none; box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);">
                     <div class="card-body">
                         <form>
                             <div class="row">
@@ -253,33 +254,13 @@
         </div>
     </div>
 
-    <!-- Modal de Confirmação -->
-    <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="confirmationModalLabel">Confirmação</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p>Deseja realmente excluir este item?</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-danger" id="confirmDelete">Excluir</button>
-            </div>
-        </div>
-    </div>
-    </div>
-
     <!-- JS -->
     <script type="module" src="../js/iframeModal.js"></script>
     <script type="module" src="../js/iframeDiv.js"></script>
     <script type="module" src="../js/main.js"></script>
-    <script src="./js/linksModal.js"></script>
+    <script src="./js/color.js"></script>
     <script src="./js/getLinks.js"></script>
+    <script src="./js/postLinks.js"></script>
 
 </body>
 </html>

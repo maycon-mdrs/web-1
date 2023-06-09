@@ -6,7 +6,8 @@ var logo = [
         url: "./images/logo-b.png"
     }
 ]
-var dados = [
+
+/* var dados = [
     {
         title: "Cardápiooooooooooo",
         icon: "material-symbols:restaurant-menu",
@@ -31,7 +32,7 @@ var dados = [
         link: "https://www.ifood.com.br/delivery/natal-rn/dogspeto-natal-ponta-negra/d99a6351-271c-4e3c-a9a3-4bed2ccdc5c7?utm_medium=share",
         target: "_blank"
     },
-];
+]; */
 
 var localizacao = [
     {
@@ -57,12 +58,30 @@ function criarLogo() {
     });
 }
 
+function getLinks() {
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    var requestOptions = {
+        method: 'GET',
+        headers: myHeaders,
+        redirect: 'follow'
+    };
+
+    fetch("http://localhost:8080/links/", requestOptions)
+    .then(response => response.json())
+    .then((result) => {
+        criarElementos(result);
+    })
+    .catch(error => console.log('error', error));
+}
+
 // Função para criar os elementos dinamicamente
-function criarElementos() {
+function criarElementos(dados) {
     var container = document.querySelector(".container");
 
     // Criar as sections dinamicamente
-    dados.forEach(function (item) {
+    dados.forEach(item => {
         var section = document.createElement("section");
         section.className = "container-section";
         
@@ -137,7 +156,7 @@ function criarLocalizacao() {
 // Chamar a função para criar os elementos quando a página carregar
 function loadPage () {
     window.onload = criarLogo();
-    window.onload = criarElementos();
+    window.onload = getLinks();
     window.onload = criarLocalizacao();
 }
 

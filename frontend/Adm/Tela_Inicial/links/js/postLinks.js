@@ -4,7 +4,7 @@ $(document).ready(function () {
         console.log('submit');
 
         if (!this.checkValidity()) {
-            e.preventDefault()
+            e.preventDefault();
             e.stopPropagation();
             $(this).addClass('was-validated');
             return;
@@ -21,7 +21,7 @@ $(document).ready(function () {
             url: url,
             icon_type: icon,
         };
-
+      
         submitFormData(formData);
         
         // Limpar o formulário e fechar o modal
@@ -34,8 +34,8 @@ $(document).ready(function () {
     $('#exampleModal').on('hidden.bs.modal', function () {
         $('#links-forms').removeClass('was-validated').trigger('reset');
         $('#item-id').val('');
-        $('#exampleModalLabel').text('Add Link');
-        $('#btn-add').text('Adicionar');
+        //$('#exampleModalLabel').text('Add Link');
+        //$('#btn-add').text('Adicionar');
     }); 
 });
 

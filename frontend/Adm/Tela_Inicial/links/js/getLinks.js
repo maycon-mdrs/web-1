@@ -35,13 +35,15 @@ function loadLinks(json){
     json.forEach(element => {
         const listaItens = document.getElementById('items-list');
         const cardTemplate = document.createElement('div');
-        
-        cardTemplate.className = "card container mb-4";
-        cardTemplate.style = "border: none; box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);";
-        cardTemplate.style.maxWidth = "540px";
+
+        cardTemplate.className = "row g-0";
+        //cardTemplate.className = "card container mb-4";
+        //cardTemplate.style = "border: none; box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);";
+        //cardTemplate.style.maxWidth = "540px";
 
         cardTemplate.innerHTML = 
         `
+        <div class="card container mb-4" style= "border: none; box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25); max-width: 540px;">
             <div class="card-body">
                 <div class="row g-0">
                     <div class="col-8">
@@ -58,112 +60,35 @@ function loadLinks(json){
                         <div class="card-body">
                             <div class="row d-flex justify-content-end">
                                 <div class="col-auto">
-                                    <button type="button" class="edit-btn" data-bs-toggle="modal" data-bs-target="#editarItemModal"><iconify-icon icon="mdi:square-edit-outline" width="24" height="24"></iconify-icon></button>
+                                    <button type="button" class="edit-btn" data-bs-toggle="modal" data-bs-target="#editarItemModal" onclick="editarModal(${element.id}, '${element.title}', '${element.url}', ${element.icon_type})"><iconify-icon icon="mdi:square-edit-outline" width="24" height="24"></iconify-icon></button>
                                 </div>
                                 <div class="col-auto">
-                                    <button type="button" class="delete-btn" data-bs-toggle="modal" data-bs-target="#deletarItemModal"><iconify-icon icon="mdi:trash-can-outline" width="24" height="24"></iconify-icon></button>
+                                    <button type="button" class="delete-btn" data-bs-toggle="modal" data-bs-target="#deletarItemModal" onclick="deletarModal(${element.id}, '${element.title}')"><iconify-icon icon="mdi:trash-can-outline" width="24" height="24"></iconify-icon></button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Modal EDITAR -->
-            <div class="modal fade" id="editarItemModal" tabindex="-1" aria-labelledby="editarItemModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                <div class="modal-content">
-                    <!-- HEADER - título -->
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="editarItemModalLabel">Editar Link</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-
-                    <!-- BODY -->
-                    <div class="modal-body">
-                        
-                        <form class="row g-3 needs-validation" id="links-forms" novalidate>
-                            <input type="hidden" id="item-id">
-
-                            <!-- título -->
-                            <div class="col-6">
-                                <label for="validationCustom01" class="form-label">Título</label>
-                                <input type="text" class="form-control" id="validationCustom01" required>
-                                <div class="invalid-feedback">
-                                    Insira um título.
-                                </div>
-                            </div>
-                        
-                            <!-- icones -->
-                            <div class="col-6">
-                                <label for="validationCustom02" class="form-label">Icone</label>
-                                <select class="form-select" id="validationCustom02" required>
-                                    <option selected disabled value="">Selecionar</option>
-                                    <option value="1">Cardápio</option>
-                                    <option value="2">Instagram</option>
-                                    <option value="3">Ifood</option>
-                                    <option value="4">Localização</option>
-                                    <option value="5">Site</option>
-                                    <option value="6">TikTok</option>
-                                    <option value="7">WhatsApp</option>
-                                    <option value="8">Nenhum</option>
-                                </select>
-                                <div class="invalid-feedback">
-                                    Selecione um estado válido.
-                                </div>
-                            </div>
-                            
-                            <!-- URL -->
-                            <div class="col-12">
-                                <label for="validationCustom03" class="form-label">URL</label>
-                                <div class="input-group">
-                                    <span class="input-group-text" id="basic-addon1">https://</span>
-                                    <input type="text" class="form-control" id="validationCustom03" placeholder="www.name.com" required>
-                                    <div class="invalid-feedback">
-                                        Insira uma URL.
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- BTN - adicionar -->
-                            <div class="col-12">
-                                <button class="btn btn-primary add-link-btn" type="submit" id="btn-add">
-                                    <span>Salvar</span>
-                                </button>  
-                            </div>
-                            
-                        </form>
-
-                    </div>
-                </div>
-                </div>
-            </div>
-
-            <!-- Modal DELETAR -->
-            <div class="modal fade" id="deletarItemModal" tabindex="-1" aria-labelledby="deletarItemModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header" style="border-bottom: none;">
-                <h1 class="modal-title fs-5" id="deletarItemModalLabel">Deletar Link</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body text-center">
-                    Você realmente dejesa exlcuir o link <strong>${element.title}</strong>?
-                </div>
-                <div class="modal-footer" style="border-top: none;">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                <button type="button" class="btn btn-danger">Excluir</button>
-                </div>
-            </div>
-            </div>
-            </div>
+        </div>
         `;
-        console.log(element.id);
         listaItens.appendChild(cardTemplate);
 });
 }
 
-function deletar(item){
+function deletarModal(id, title) {
+    const deleteBtn = document.getElementById('delete-btn-modal');
+    const txtItem = document.getElementById('txt-item-Modal');
+    const txtItemStrong = document.getElementById('txt-item-strong');
+
+    txtItemStrong.innerText = `${title}`;
+
+    deleteBtn.addEventListener('click', () => {
+        deletar(id);
+    });
+}
+
+function deletar(item) {
     var requestOptions = {
         method: 'DELETE',
         redirect: 'follow'
@@ -174,26 +99,66 @@ function deletar(item){
     .then(window.location.reload())
     .catch(error => console.log('error', error));
 }
-function editar(element){
-    var requestOptions = {
-        method: 'PUT',
-        redirect: 'follow'
-    };
 
-    const item = element.id;
-    fetch("http://localhost:8080/links/" + item, requestOptions)
-    .then(response => response.json())
-    .then(window.location.reload())
-    .catch(error => console.log('error', error));
+function editarModal(id, title, url, icon_type) {
+    const salvarBtn = document.getElementById('btn-save');
+    
+    console.log(id)
+    $('#title-edit').val(title);
+    $('#icon-edit').val(icon_type);
+    $('#url-edit').val(url);
+    
+    // Manipula o evento de submit do formulário
+    $('#links-forms-edit').submit(function (e) {
+        console.log('submit');
+
+        if (!this.checkValidity()) {
+            e.preventDefault();
+            e.stopPropagation();
+            $(this).addClass('was-validated');
+            return;
+        }
+
+        // const itemId = $('#item-id').val();
+        const title = $('#title-edit').val();
+        const icon = $('#icon-edit').val();
+        const url = $('#url-edit').val();
+
+        // Crie um objeto com os valores dos campos
+        var formData = {
+            title: title,
+            url: url,
+            icon_type: icon,
+        };
+        
+        editar(id, formData);
+    });
+
 }
-// Manipula o evento de clique no botão "Excluir"
-$(document).on('click', '.delete-btn', function () {
-    deletar(element);
-});
 
-// Manipula o evento de clique no botão "Excluir" no modal de confirmação
-$('#confirmDelete').click(function () {
-    const itemId = $('#confirmationModal').data('item-id');
-    $('#' + itemId).remove();
-    $('#confirmationModal').modal('hide');
-});
+function editar(item, formData) {
+    fetch('http://localhost:8080/links/' + item, {
+      method: 'PUT',
+      dataType: 'json',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json; charset=UTF-8',
+      },
+      body: JSON.stringify(formData)
+    })
+    .then(response => {
+      if (response.ok) {
+        // A resposta do servidor foi bem-sucedida
+        console.log('Dados enviados com sucesso!');
+        // Aqui você pode fazer algo como exibir uma mensagem de sucesso ao usuário
+      } else {
+        // A resposta do servidor não foi bem-sucedida
+        console.error('Falha ao enviar dados.');
+        // Aqui você pode fazer algo como exibir uma mensagem de erro ao usuário
+      }
+    })
+    .catch(error => {
+      console.error('Erro ao enviar dados:', error);
+      // Aqui você pode fazer algo como exibir uma mensagem de erro genérica ao usuário
+    });
+}

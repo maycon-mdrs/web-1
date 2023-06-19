@@ -72,8 +72,30 @@ function getLinks() {
     .then(response => response.json())
     .then((result) => {
         criarElementos(result);
+        criarLocalizacao();
     })
     .catch(error => console.log('error', error));
+}
+
+async function getIcones(iconType) {
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    var requestOptions = {
+        method: 'GET',
+        headers: myHeaders,
+        redirect: 'follow'
+    };
+
+    return await fetch('http://localhost:8080/tipo_link/' + iconType, requestOptions)
+    .then(response => response.json())
+    .then((result) => {
+        return result.icon_name;
+    })
+    .catch(error => {
+      console.error('Erro ao enviar dados:', error);
+      // Aqui você pode fazer algo como exibir uma mensagem de erro genérica ao usuário
+    });
 }
 
 // Função para criar os elementos dinamicamente
@@ -81,7 +103,7 @@ function criarElementos(dados) {
     var container = document.querySelector(".container");
 
     // Criar as sections dinamicamente
-    dados.forEach(item => {
+    dados.forEach(async item => {
         var section = document.createElement("section");
         section.className = "container-section";
         
@@ -95,8 +117,10 @@ function criarElementos(dados) {
         button.type = "button";
         button.className = "social-btn-t";
         
+        var iconType = await getIcones(item.icon_type);
+
         var icon = document.createElement("iconify-icon");
-        icon.setAttribute("icon", item.icon);
+        icon.setAttribute("icon", iconType);
         icon.setAttribute("width", "22");
         icon.setAttribute("height", "22");
         
@@ -108,19 +132,19 @@ function criarElementos(dados) {
         section.appendChild(div);
         div.appendChild(a);
         a.appendChild(button);
-        if(item.icon != ""){ 
+        if(iconType != ""){ 
             button.appendChild(icon);
         }
         button.appendChild(span); 
 
         // ajustar botão
-        if(span.offsetWidth > 100 && item.icon != "") {
+        if(span.offsetWidth > 100 && iconType != "") {
             span.style.marginLeft = "30px";
         }
     });
 }
 
-function criarLocalizacao() {
+async function criarLocalizacao() {
     var container = document.querySelector(".container");
 
     // Criar as sections dinamicamente
@@ -154,10 +178,9 @@ function criarLocalizacao() {
 }
 
 // Chamar a função para criar os elementos quando a página carregar
-function loadPage () {
-    window.onload = criarLogo();
-    window.onload = getLinks();
-    window.onload = criarLocalizacao();
-}
+    window.addEventListener('load', () => {
+        console.log('teste')
+        criarLogo();
+        getLinks();
+    })
 
-loadPage();

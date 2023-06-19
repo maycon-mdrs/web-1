@@ -48,7 +48,6 @@
                                 <a class="sub-item" href="../perfil/">
                                     <iconify-icon class="icon" icon="mdi:storefront-edit" style="color: white;" width="18" height="18"></iconify-icon>Perfil</a>
                                 <a class="sub-item" href="../links/"><iconify-icon class="icon" icon="mdi:link-variant" style="color: white;" width="18" height="18"></iconify-icon>Links</a>
-                                <a class="sub-item" href="../endereco/"><iconify-icon class="icon" icon="mdi:map-marker" style="color: white;" width="18" height="18"></iconify-icon>Endereço</a>
                             </div>
                         </div>
             
@@ -91,45 +90,24 @@
             <div id="col-1" class="col-8 mt-4" style="padding-bottom: 90px;">
 
                 <!-- Título - add links -->
-                <header class="row g-0">
-                    <div class="container" style="max-width: 540px;"><h4>Adicionar Links</h4></div>
-                </header>
+                <!-- 
+                    <header class="row g-0">
+                        <div class="container" style="max-width: 540px;"><h4>Adicionar Links</h4></div>
+                    </header> 
+                -->
 
                 <!-- ADD LINKS -->
-                <div class="row g-0 mb-4">
-                <div class="card container" style="max-width: 540px; border: none; box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);">
-                    <div class="card-body">
-                        <form>
-                            <div class="row">
-                                <div class="col-12">
-                                    <!-- Button trigger modal -->
-                                    <button type="button" class="btn btn-primary add-link-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                        + Add Link
-                                    </button>        
-                                </div>
+                <div class="row g-0 mb-3 mt-4">
+                    <form>
+                        <div class="row">
+                            <div class="col-12 container" style="max-width: 540px; padding: 0;">
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-primary add-link-btn" data-bs-toggle="modal" data-bs-target="#exampleModal" style="border: none; box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);">
+                                    + Add Link
+                                </button>        
                             </div>
-                    
-                            <div class="row mt-3">
-                              <div class="col-6">
-                                    <label for="cor-btn" class="form-label">Cor Links</label>
-                                    <div class="color-container">
-                                        <input type="color" id="cor-btn" name="cor-btn" value="#0d6efd">
-                                        <input type="text" id="hexValue-1" style="cursor: pointer;" readonly>
-                                    </div>  
-                              </div>
-                    
-                              <div class="col-6">
-                                    <label for="cor-txt-btn" class="form-label">Cor Texto</label>
-                                    <div class="color-container">
-                                        <input type="color" id="cor-txt-btn" name="cor-txt-btn" value="#0d6efd">
-                                        <input type="text" id="hexValue-2" style="cursor: pointer;" readonly>
-                                    </div> 
-                              </div>
-                            </div>
-                        </form>
-                        
-                    </div>
-                </div>
+                        </div>
+                    </form>
                 </div>
                 <!-- END - ADD LINKS -->
 

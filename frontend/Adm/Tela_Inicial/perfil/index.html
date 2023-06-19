@@ -9,6 +9,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 
+    <!-- JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <!-- ICONIFY -->
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
 
@@ -45,7 +48,6 @@
                                 <a class="sub-item" href="../perfil/">
                                     <iconify-icon class="icon" icon="mdi:storefront-edit" style="color: white;" width="18" height="18"></iconify-icon>Perfil</a>
                                 <a class="sub-item" href="../links/"><iconify-icon class="icon" icon="mdi:link-variant" style="color: white;" width="18" height="18"></iconify-icon>Links</a>
-                                <a class="sub-item" href="../endereco/"><iconify-icon class="icon" icon="mdi:map-marker" style="color: white;" width="18" height="18"></iconify-icon>Endereço</a>
                             </div>
                         </div>
             
@@ -96,7 +98,7 @@
                 <!-- CARD -->
                 <div class="row g-0">
                 <div class="card container mb-3" style="max-width: 540px; max-height: fit-content; border: none; box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);">
-                    <form>
+                    <form id="perfil-forms" novalidate>
                         <div class="row g-0">
 
                              <!-- IMG -->
@@ -110,7 +112,8 @@
                             <div class="col-sm">
                                 <div class="card-body">
                                     <div class="row g-0">
-                                        <input type="file" class="btn btn-primary add-link-btn" id="upload-input">
+                                        <button type="button" class="btn btn-primary add-link-btn" onclick="document.getElementById('upload-input').click()">Add Imagem</button>
+                                        <input type="file" class="btn btn-primary add-link-btn" id="upload-input" style="display: none;">
                                     </div>
                                     <div class="row g-0 mt-3">
                                         <button type="button" class="btn btn-light" style="border-radius: 20px; height: 50px;">Remover</button>
@@ -125,27 +128,80 @@
 
                                 <!-- NOME - EMPRESA -->
                                 <div class="mb-3">
-                                    <label for="exampleFormControlInput1" class="form-label">Nome</label>
-                                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Empresa Lorem">
+                                    <label for="nome-input" class="form-label">Nome</label>
+                                    <input type="text" class="form-control" id="nome-input" placeholder="Empresa Lorem">
                                 </div>    
 
                                 <!-- DESCRIÇÃO - EMPRESA -->
                                 <div class="mb-3">
-                                    <label for="exampleFormControlTextarea1" class="form-label">Descrição</label>
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    <label for="descricao-input" class="form-label">Descrição</label>
+                                    <textarea class="form-control" id="descricao-input" rows="3"></textarea>
                                 </div>
+
+                                <hr class="mb-5 mt-5">
+
+                                <!-- ENDEREÇO -->
+                                <div class="mb-3">
+                                    <label for="endereco-input" class="form-label">Endereço</label>
+                                    <textarea class="form-control" id="endereco-input" rows="3" required></textarea>
+                                    <div class="invalid-feedback">
+                                        Insira um título.
+                                    </div>
+                                </div>
+
+                                <!-- ENDEREÇO - URL -->
+                                <div class="mb-3">
+                                    <label for="localizacao-input" class="form-label">Google Maps</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text" id="basic-addon1">https://</span>
+                                        <input type="text" class="form-control" id="localizacao-input" placeholder="www.google.com/maps" required>
+                                        <div class="invalid-feedback">
+                                            Insira uma URL.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <hr class="mb-5 mt-5">
                                 
                                 <!-- BACKGROUND COLOR -->
                                 <div class="row g-3">
-                                    <div class="col-12">
+                                    <div class="col-6">
                                         <label for="cor-btn" class="form-label">Cor Background</label>
                                         <div class="color-container">
-                                            <input type="color" id="cor-btn" name="cor-btn" value="#CCCCCC">
-                                            <input type="text" id="hexValue-1" style="cursor: pointer;" readonly>
+                                            <input type="color" id="cor-bg-btn" name="cor-bg-btn" value="#CCCCCC">
+                                            <input type="text" id="hexValue-bg" style="cursor: pointer;" readonly>
                                         </div>  
                                     </div>
-            
-                                    <div class="col-12">
+                                    
+                                    <!-- TEXT COLOR -->
+                                    <div class="col-6">
+                                        <label for="cor-txt-btn" class="form-label">Cor Texto</label>
+                                        <div class="color-container">
+                                            <input type="color" id="cor-txt-btn" name="cor-txt-btn" value="#FFFFFF">
+                                            <input type="text" id="hexValue-txt" style="cursor: pointer;" readonly>
+                                        </div> 
+                                    </div>
+                                    
+                                    <!-- COR 1 -->
+                                    <div class="col-6">
+                                        <label for="cor-btn" class="form-label">Cor Links</label>
+                                        <div class="color-container">
+                                            <input type="color" id="cor-1-btn" name="cor-1-btn" value="#0d6efd">
+                                            <input type="text" id="hexValue-color-1" style="cursor: pointer;" readonly>
+                                        </div>  
+                                    </div>
+                        
+                                    <!-- COR 2 -->
+                                    <div class="col-6">
+                                        <label for="cor-btn" class="form-label">Cor Links Hover</label>
+                                        <div class="color-container">
+                                            <input type="color" id="cor-2-btn" name="cor-2-btn" value="#0d6efd">
+                                            <input type="text" id="hexValue-color-2" style="cursor: pointer;" readonly>
+                                        </div>  
+                                    </div>
+
+                                    <!-- SALVAR - btn -->
+                                    <div class="col-12 mt-5">
                                         <button class="btn btn-primary add-link-btn" type="submit">
                                             <span>Salvar</span>
                                         </button>  
@@ -205,7 +261,9 @@
     <script type="module" src="../js/iframeModal.js"></script>
     <script type="module" src="../js/iframeDiv.js"></script>
     <script type="module" src="./js/main.js"></script>
+    <script src="./js/color.js"></script>
     <script src="./js/logo.js"></script>
+    <script src="./js/postPerfil.js"></script>
 
 </body>
 </html>

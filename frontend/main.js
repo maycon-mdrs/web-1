@@ -1,4 +1,3 @@
-
 // Dados recebidos do backend
 var logo = [
     {
@@ -72,7 +71,7 @@ function getLinks() {
     .then(response => response.json())
     .then((result) => {
         criarElementos(result);
-        criarLocalizacao();
+        //criarLocalizacao();
     })
     .catch(error => console.log('error', error));
 }
@@ -110,8 +109,9 @@ function criarElementos(dados) {
         var div = document.createElement("div");
         
         var a = document.createElement("a");
-        a.href = item.link;
-        a.target = item.target;
+        a.href = "https://" + item.url;
+        a.target = "_blank";
+        //a.target = item.target;
         
         var button = document.createElement("button");
         button.type = "button";

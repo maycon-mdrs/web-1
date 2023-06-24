@@ -116,6 +116,7 @@ function criarElementos(dados) {
         var button = document.createElement("button");
         button.type = "button";
         button.className = "social-btn-t";
+        //button.style.backgroundColor = item.;
         
         var iconType = await getIcones(item.icon_type);
 
@@ -126,6 +127,7 @@ function criarElementos(dados) {
         
         var span = document.createElement("span");
         span.innerText = item.title;
+        //span.style.color = item.;
 
         // Adicionar os elementos criados à página
         container.appendChild(section);
@@ -183,4 +185,3 @@ async function criarLocalizacao() {
         criarLogo();
         getLinks();
     })
-

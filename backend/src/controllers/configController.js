@@ -1,5 +1,6 @@
 const database = require('../sequelize_config/models');
 const path = require('path');
+const fs = require('fs');
 
 class ConfigController {
     static async listarConfig(req, res) {
@@ -37,11 +38,20 @@ class ConfigController {
     }
 
     static async getImagem(req, res) {
-        try {
-        const filename = 'logo.png'; 
-        res.sendFile(path.join(__dirname, '../../uploads', filename));
-        } catch (error) {
-            res.sendFile(path.join(__dirname, '../../uploads', 'default.png'));
+        const requestedFileName = 'logo.png'; // Nome do arquivo solicitado
+        const defaultFileName = 'default.jpg'; // Nome da imagem padrão
+        const requestedFilePath = path.join(__dirname, '../../uploads', requestedFileName);
+        const defaultFilePath = path.join(__dirname, '../../uploads', defaultFileName);
+        // Verifica se o arquivo solicitado existe
+        if (fs.existsSync(requestedFilePath)) {
+            // Envia o arquivo solicitado
+            res.send(requestedFileName);
+        } else if (fs.existsSync(defaultFilePath)) {
+            // Envia a imagem padrão
+            res.send(defaultFilePath);
+        } else {
+            // Nenhum arquivo encontrado
+            res.status(404).send('Arquivo não encontrado');
         }
 
     }

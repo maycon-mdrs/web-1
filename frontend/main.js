@@ -71,7 +71,7 @@ function getLinks() {
     .then(response => response.json())
     .then((result) => {
         criarElementos(result);
-        //criarLocalizacao();
+        criarLocalizacao();
     })
     .catch(error => console.log('error', error));
 }

@@ -10,13 +10,18 @@ modalDeletar.innerHTML =
         <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header" style="border: none;">
-            <h4 class="modal-title" id="deletarItemModalLabel">Confirmar Exclusão</h4>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
-            <h5 id="txt-item" class="text-center" style="margin: 0;">Deseja realmente excluir <strong id="txt-item-strong"></strong> ?</h5>
+            <div class="d-flex flex-column align-items-center">
+                <iconify-icon icon="bi:exclamation-circle"  width="100" height="100" style="color: #dc3545;"></iconify-icon>
             </div>
-            <div class="modal-footer" style="border: none;">
+            <div class="modal-body d-flex flex-column align-items-center">
+                <h1 id="txt-item" class="text-center" style="margin: 0;<strong id="txt-item-strong">Tem certeza?</strong></h1>
+            </div>
+            <div class="modal-body d-flex flex-column align-items-center" style="padding-top: 0!important;">
+                <h6 id="txt-item" class="text-center" style="margin: 0;">Se excluir o item "<strong id="txt-item-strong"></strong>" não será possível voltar atrás!</h6>
+            </div>
+            <div class="modal-footer d-flex justify-content-center" style="border: none;">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
             <button type="button" class="btn btn-danger" id="delete-btn-modal">Excluir</button>
             </div>

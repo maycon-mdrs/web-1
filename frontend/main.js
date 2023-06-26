@@ -42,27 +42,27 @@ var localizacao = [
     }
 ]
 
-function criarLogo() {
+function criarLogo(logo) {
     var container = document.querySelector(".container");
-    logo.forEach(function (l) {
+
         var header = document.createElement("header");
         header.className = "container-header";
 
         var img = document.createElement("img");
-        img.className = l.title;
-        img.src = l.url;
+        img.className = "logo";
+        img.src = 'http://localhost:8080/getLogo/'; 
 
         var nomeEmpresa = document.createElement("h3");
         var descricaoEmpresa = document.createElement("span");
 
         //nomeEmpresa.style.color = ;
         //descricaoEmpresa.style.color = ;
-
-        container.appendChild(nomeEmpresa);
-        container.appendChild(descricaoEmpresa);
+        
         container.appendChild(header);
         header.appendChild(img);
-    });
+        header.appendChild(nomeEmpresa);
+        header.appendChild(descricaoEmpresa);
+
 }
 
 function getLinks() {
@@ -189,7 +189,7 @@ async function criarLocalizacao() {
 
 // Chamar a função para criar os elementos quando a página carregar
     window.addEventListener('load', () => {
-        console.log('teste')
+        console.log('teste');
         criarLogo();
         getLinks();
     })

@@ -39,16 +39,16 @@ class ConfigController {
 
     static async getImagem(req, res) {
         const requestedFileName = 'logo.png'; // Nome do arquivo solicitado
-        const defaultFileName = 'default.jpg'; // Nome da imagem padrão
+        const defaultFileName = 'default.png'; // Nome da imagem padrão
         const requestedFilePath = path.join(__dirname, '../../uploads', requestedFileName);
         const defaultFilePath = path.join(__dirname, '../../uploads', defaultFileName);
         // Verifica se o arquivo solicitado existe
         if (fs.existsSync(requestedFilePath)) {
             // Envia o arquivo solicitado
-            res.send(requestedFileName);
+            res.sendFile(requestedFilePath);
         } else if (fs.existsSync(defaultFilePath)) {
             // Envia a imagem padrão
-            res.send(defaultFilePath);
+            res.sendFile(defaultFilePath);
         } else {
             // Nenhum arquivo encontrado
             res.status(404).send('Arquivo não encontrado');

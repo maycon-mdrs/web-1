@@ -3,8 +3,8 @@ $(document).ready(function () {
     $('#perfil-forms').submit(function (e) {
         console.log('submit');
 
-        /* e.preventDefault();
-        if (!this.checkValidity()) {
+        e.preventDefault();
+        /* if (!this.checkValidity()) {
             e.preventDefault();
             e.stopPropagation();
             $(this).addClass('was-validated');
@@ -20,6 +20,12 @@ $(document).ready(function () {
         const corTxt = $('#cor-txt-btn').val();
         const cor1 = $('#cor-1-btn').val();
         const cor2 = $('#cor-2-btn').val();
+
+        const fileInput = $('#upload-input')[0];
+        const file = fileInput.files[0];
+        const imgData = new FormData();
+        imgData.append('file', file);
+  
 
         // Crie um objeto com os valores dos campos
         var formData = {
@@ -39,12 +45,39 @@ $(document).ready(function () {
 
         submitFormData(formData);
         submitEnderecoData(enderecoData);
+        submitLogo(imgData);
         //submitFormData(formData);
         
         // Limpar o formulário e fechar o modal
         $(this).removeClass('was-validated').trigger('reset');
     });
 });
+
+
+function submitLogo(imgData) {
+  fetch('http://localhost:8080/upload', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'multipart/form-data'
+    },    
+    body: imgData,
+  })
+  .then(response => {
+    if (response.ok) {
+      // A resposta do servidor foi bem-sucedida
+      console.log('Dados enviados com sucesso!');
+      // Aqui você pode fazer algo como exibir uma mensagem de sucesso ao usuário
+    } else {
+      // A resposta do servidor não foi bem-sucedida
+      console.error('Falha ao enviar dados.');
+      // Aqui você pode fazer algo como exibir uma mensagem de erro ao usuário
+    }
+  })
+  .catch(error => {
+    console.error('Erro ao enviar dados:', error);
+    // Aqui você pode fazer algo como exibir uma mensagem de erro genérica ao usuário
+  });
+}
 
 function submitFormData(formData) {
     fetch('http://localhost:8080/config/' + 1, {

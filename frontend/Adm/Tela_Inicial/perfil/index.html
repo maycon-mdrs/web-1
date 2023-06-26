@@ -98,7 +98,7 @@
                 <!-- CARD -->
                 <div class="row g-0">
                 <div class="card container mb-3" style="max-width: 540px; max-height: fit-content; border: none; box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);">
-                    <form id="perfil-forms" novalidate>
+                    <form id="perfil-forms" enctype="multipart/form-data" novalidate>
                         <div class="row g-0">
 
                              <!-- IMG -->
@@ -113,7 +113,7 @@
                                 <div class="card-body">
                                     <div class="row g-0">
                                         <button type="button" class="btn btn-primary add-link-btn" onclick="document.getElementById('upload-input').click()">Add Imagem</button>
-                                        <input type="file" class="btn btn-primary add-link-btn" id="upload-input" style="display: none;">
+                                        <input type="file" class="btn btn-primary add-link-btn" id="upload-input" style="display: none;" name="file">
                                     </div>
                                     <div class="row g-0 mt-3">
                                         <button type="button" class="btn btn-light" style="border-radius: 20px; height: 50px;">Remover</button>

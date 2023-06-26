@@ -52,6 +52,14 @@ function criarLogo() {
         img.className = l.title;
         img.src = l.url;
 
+        var nomeEmpresa = document.createElement("h3");
+        var descricaoEmpresa = document.createElement("span");
+
+        //nomeEmpresa.style.color = ;
+        //descricaoEmpresa.style.color = ;
+
+        container.appendChild(nomeEmpresa);
+        container.appendChild(descricaoEmpresa);
         container.appendChild(header);
         header.appendChild(img);
     });

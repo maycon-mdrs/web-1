@@ -19,11 +19,27 @@ main .container {
 
 /* HEADER + SECTION'S */
 .container-header{
-    margin-bottom: 70px;
+    margin-bottom: 40px;
 }
 .container-header, .container-section {
     display: flex;
     justify-content: center;
+    word-break: break-all;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* NOME - EMPRESA */
+.container-header h3 {
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Detalhes */
+.container-header span {
+    color: white;
+    text-align: justify;
 }
 
 /* IMG - LOGO */
@@ -32,6 +48,7 @@ main .container {
     height: 198px;
     margin: 10px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    margin-bottom: 20px;
 }
 
 /* BUTTON'S */

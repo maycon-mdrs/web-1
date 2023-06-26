@@ -9,20 +9,11 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      categoria: {
+      titulo: {
         type: Sequelize.STRING
       },
-      imdProduct: {
+      url: {
         type: Sequelize.STRING
-      },
-      title: {
-        type: Sequelize.STRING
-      },
-      description: {
-        type: Sequelize.STRING
-      },
-      value: {
-        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,

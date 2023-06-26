@@ -14,11 +14,8 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   produtos.init({
-    categoria: DataTypes.STRING,
-    imdProduct: DataTypes.STRING,
-    title: DataTypes.STRING,
-    description: DataTypes.STRING,
-    value: DataTypes.INTEGER
+    titulo: DataTypes.STRING,
+    url: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'produtos',

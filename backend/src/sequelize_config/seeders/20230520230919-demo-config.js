@@ -11,6 +11,7 @@ module.exports = {
       button_color: 'blue',
       text_color: 'yellow',
       background_color: 'brown',
+      button_colorOver: 'white'
     },
     {
       name: 'gil',
@@ -19,6 +20,7 @@ module.exports = {
       button_color: 'blue',
       text_color: 'yellow',
       background_color: 'brown',
+      button_colorOver: 'white'
     }
   ], {});
   },

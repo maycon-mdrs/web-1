@@ -30,6 +30,10 @@ module.exports = function(sequelize, DataTypes) {
     background_color: {
       type: DataTypes.STRING(45),
       allowNull: false
+    },
+    button_colorOver: {
+      type: DataTypes.STRING(45),
+      allowNull: false
     }
   }, {
     sequelize,

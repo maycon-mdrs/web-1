@@ -42,7 +42,8 @@ var localizacao = [
     }
 ]
 
-function criarLogo(logo) {
+/* CRIAR LOGO - GET */
+function criarLogo() {
     var container = document.querySelector(".container");
 
         var header = document.createElement("header");
@@ -65,7 +66,8 @@ function criarLogo(logo) {
 
 }
 
-function getLinks() {
+/* GET LINKS */
+async function getLinks() {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
@@ -75,15 +77,15 @@ function getLinks() {
         redirect: 'follow'
     };
 
-    fetch("http://localhost:8080/links/", requestOptions)
+    await fetch("http://localhost:8080/links/", requestOptions)
     .then(response => response.json())
     .then((result) => {
         criarElementos(result);
-        criarLocalizacao();
     })
     .catch(error => console.log('error', error));
 }
 
+/* GET ICONS */
 async function getIcones(iconType) {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
@@ -105,8 +107,28 @@ async function getIcones(iconType) {
     });
 }
 
+/* GET LOCALIZAÇÃO */
+async function getLocalizacao() {
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    var requestOptions = {
+        method: 'GET',
+        headers: myHeaders,
+        redirect: 'follow'
+    };
+
+    await fetch("http://localhost:8080/produtos/", requestOptions)
+    .then(response => response.json())
+    .then((result) => {
+        console.log(result)
+        criarLocalizacao(result);
+    })
+    .catch(error => console.log('error', error));
+}
+
 // Função para criar os elementos dinamicamente
-function criarElementos(dados) {
+async function criarElementos(dados) {
     var container = document.querySelector(".container");
 
     // Criar as sections dinamicamente
@@ -154,7 +176,8 @@ function criarElementos(dados) {
     });
 }
 
-async function criarLocalizacao() {
+
+async function criarLocalizacao(localizacao) {
     var container = document.querySelector(".container");
 
     // Criar as sections dinamicamente
@@ -166,30 +189,36 @@ async function criarLocalizacao() {
         div.className = "localizacao-conteiner";
         
         var a = document.createElement("a");
-        a.href = loc.link;
-        a.target = loc.target;
-        
-        var icon = document.createElement("iconify-icon");
-        icon.setAttribute("icon", loc.icon);
-        icon.setAttribute("width", "24");
-        icon.setAttribute("height", "24");
-        
+        a.href = loc.url;
+        a.target = "_blank";
+
         var span = document.createElement("span");
         span.className = "span-white";
-        span.innerText = loc.title;
+        span.innerText = loc.titulo;
 
         // Adicionar os elementos criados à página
         container.appendChild(section);
         section.appendChild(div);
         div.appendChild(a);
-        a.appendChild(icon);
+        
+        if(loc.titulo != "") {
+            var icon = document.createElement("iconify-icon");
+            icon.setAttribute("icon", "material-symbols:pin-drop-rounded");
+            icon.setAttribute("width", "24");
+            icon.setAttribute("height", "24");
+            
+            a.appendChild(icon);
+            a.appendChild(span);
+        }
         a.appendChild(span);
     });
 }
 
 // Chamar a função para criar os elementos quando a página carregar
-    window.addEventListener('load', () => {
-        console.log('teste');
+    window.addEventListener('load', async () => {
         criarLogo();
-        getLinks();
+        await getLinks();
+        setTimeout(async () => {
+            await getLocalizacao();
+        }, 300);
     })

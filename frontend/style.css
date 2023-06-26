@@ -4,7 +4,7 @@
 }
 
 body {
-    background-image: url("images/fundo-b.png");
+    /* background-image: url("images/fundo-b.png"); */
     background-size: cover;
     background-repeat: repeat-y;
 }
@@ -19,7 +19,7 @@ main .container {
 
 /* HEADER + SECTION'S */
 .container-header{
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 .container-header, .container-section {
     display: flex;
@@ -44,11 +44,11 @@ main .container {
 
 /* IMG - LOGO */
 .logo {
-    width: 235px;
-    height: 198px;
-    margin: 10px;
+    width: 240px;
+    /*  height: 198px; */
+    /* margin: 10px; */
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
 }
 
 /* BUTTON'S */
@@ -100,7 +100,7 @@ a {
 
 /* LOCALIZÃO */
 .localizacao-conteiner {
-    margin: 150px 10px 60px 0px;
+    margin: 40px 10px 60px 0px;
 }
 .localizacao-conteiner a {
     display: flex;
@@ -165,6 +165,6 @@ a {
         padding: 20px 0px;
     } 
     .localizacao-conteiner {
-        margin: 150px 10px 25px 0px;
+        margin: 30px 10px 25px 0px;
     }
 }

@@ -47,10 +47,18 @@ function loadConfig(itens) {
     itens.forEach(element =>{
         $('#nome-input').val(element.name);
         $('#descricao-input').val(element.description);
+
         $('#cor-bg-btn').val(element.background_color);
+        $('#hexValue-bg').val(element.background_color);
+
         $('#cor-txt-btn').val(element.text_color);
+        $('#hexValue-txt').val(element.text_color);
+
         $('#cor-1-btn').val(element.button_color);
+        $('#hexValue-color-1').val(element.button_color);
+
         $('#cor-2-btn').val(element.button_colorOver);
+        $('#hexValue-color-2').val(element.button_color);
     });
 }
 

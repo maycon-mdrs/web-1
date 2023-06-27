@@ -3,7 +3,7 @@ $(document).ready(function () {
     $('#perfil-forms').submit(function (e) {
         console.log('submit');
 
-        e.preventDefault();
+        //e.preventDefault();
         /* if (!this.checkValidity()) {
             e.preventDefault();
             e.stopPropagation();

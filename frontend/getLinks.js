@@ -80,6 +80,21 @@ async function criarElementos(dados) {
         button.className = "social-btn-t";
         button.style.backgroundColor = config[0].button_color;
 
+        // Define a cor de fundo original
+        var corOriginal = button.style.backgroundColor;
+
+        // Adiciona um ouvinte de evento para o mouseover
+        button.addEventListener("mouseover", function() {
+        // Define a cor de fundo quando o mouse está sobre o elemento
+        button.style.backgroundColor = config[0].button_colorOver;
+        });
+
+        // Adiciona um ouvinte de evento para o mouseout
+        button.addEventListener("mouseout", function() {
+        // Restaura a cor de fundo original quando o mouse sai do elemento
+        button.style.backgroundColor = corOriginal;
+        });
+
         var iconType = await getIcones(item.icon_type);
 
         var icon = document.createElement("iconify-icon");

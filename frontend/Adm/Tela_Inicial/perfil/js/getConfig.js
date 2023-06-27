@@ -16,6 +16,15 @@ function getConfig() {
     .catch(error => console.log('error', error));
 }
 
+function loadLogo() {
+    const uploadedImgDiv = document.querySelector("#uploaded-image");
+
+    const img = document.createElement("img");
+    img.src = 'http://localhost:8080/getLogo/'; 
+    
+    uploadedImgDiv.appendChild(img);
+}
+
 function getEndereco() {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
@@ -53,6 +62,7 @@ function loadEndereco(itens) {
 }
 
 window.onload = () => {
+    loadLogo();
     getConfig();
     getEndereco();
 };

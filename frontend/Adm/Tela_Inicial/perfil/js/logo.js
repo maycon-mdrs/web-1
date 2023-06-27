@@ -14,13 +14,17 @@ document.getElementById('upload-input').addEventListener('change', function(even
 // LOGO - IMG
 $('#upload-input').on('change', function(event) {
     var file = event.target.files[0];
-    var reader = new FileReader();
+    if (file.type.startsWith('image/png')) {
+        var reader = new FileReader();
   
-    reader.onload = function(e) {
-      var uploadedImage = $('#uploaded-image');
-      uploadedImage.html('<img src="' + e.target.result + '" alt="Uploaded Image">');
+        reader.onload = function(e) {
+          var uploadedImage = $('#uploaded-image');
+          uploadedImage.html('<img src="' + e.target.result + '" alt="Uploaded Image">');
+        }
+      
+        reader.readAsDataURL(file);
+    } else {
+        alert("Por favor, selecione um arquivo de imagem.png válido!");
     }
-  
-    reader.readAsDataURL(file);
   });
   

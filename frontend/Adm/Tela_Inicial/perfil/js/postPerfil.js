@@ -22,11 +22,14 @@ $(document).ready(function () {
         const cor2 = $('#cor-2-btn').val();
 
         const fileInput = $('#upload-input')[0];
+        //console.log($('#upload-input')[0]);
+        //console.log($('#upload-input'));
         const file = fileInput.files[0];
+        //console.log(file)
         const imgData = new FormData();
-        imgData.append('file', file);
+        imgData.append("imagem", file);
   
-
+        //console.log(imgData)
         // Crie um objeto com os valores dos campos
         var formData = {
             name: nome,
@@ -46,20 +49,13 @@ $(document).ready(function () {
         submitFormData(formData);
         submitEnderecoData(enderecoData);
         submitLogo(imgData);
-        //submitFormData(formData);
-        
-        // Limpar o formulário e fechar o modal
-        $(this).removeClass('was-validated').trigger('reset');
     });
 });
 
 
 function submitLogo(imgData) {
-  fetch('http://localhost:8080/upload', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'multipart/form-data'
-    },    
+  fetch('http://localhost:8080/upload/', {
+    method: 'POST', 
     body: imgData,
   })
   .then(response => {
